@@ -54,4 +54,3 @@ Description
 
 /register POST { username: 'foo', password:'1234' } Create a new user. 
 /authenticate POST { username: 'foo', password:'1234' } Generate a token. 
-
