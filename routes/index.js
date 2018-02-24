@@ -12,9 +12,9 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
 });
 
-router.post('/register', function(req, res, next) {
+router.post('/register', (req, res, next) =>{
     const { username, password } = req.body;
-
+console.log('kullanıcı: '+username, ' şifre :' + password);
     bcrypt.hash(password, 10).then((hash) => {
         const user = new User({
             username,
@@ -26,7 +26,7 @@ router.post('/register', function(req, res, next) {
             res.json(data);
         }).catch((err) => {
             res.json(err);
-        });
+        })
     });
 });
 
